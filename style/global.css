@@ -1,4 +1,4 @@
-/* ============================ GLOBAL ============================ */
+/* ============================ COLORS ============================ */
 :root {
     --dark-violet: hsl(256, 26%, 20%);
     --grayish-blue: hsl(216, 30%, 68%);
@@ -6,18 +6,59 @@
     --dark-grayish-violet: hsl(273, 4%, 51%);
     --very-light-gray: hsl(0, 0%, 98%);
 }
-
+/* ============================ COLORS ============================ */
+/*  */
+/* ======================== LAYOUT BASICS ========================= */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-size: 16px;
     border: none;
+    font-family: 'Karla', sans-serif;
+    text-align: center;
 }
 
+section,
+footer {
+    margin-bottom: 8rem;
+}
+/* ======================== LAYOUT BASICS ========================= */
+/*  */
+/* ============================= TEXT ============================= */
 a {
     text-decoration: none;
     color: inherit;
+}
+
+h1, h2, h3 {
+    font-family: 'DM Serif Display', serif;
+    font-weight: 400;
+}
+
+h2 {
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+
+h3 {
+    font-size: 1.8rem;
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.6rem;
+    font-weight: 400;
+    margin-bottom: 1.5em;
+}
+/* ============================= TEXT ============================= */
+/*  */
+/* =========================== REUSABLE =========================== */
+.logo-wrapper {
+    align-items: center;
+    justify-content: center;
+    align-self: center;
 }
 
 .btn-border {
@@ -33,17 +74,20 @@ a {
     padding: 0.5rem 2rem;
 }
 
-.logo-container {
-    align-items: center;
-    justify-content: center;
-    align-self: center;
+.btn-border:hover {
+    color: var(--dark-grayish-violet);
+    border-color: var(--dark-grayish-violet);
 }
 
-/* ============================ GLOBAL ============================ */
+.wrapper {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+/* =========================== REUSABLE =========================== */
+/*  */
 /* ============================ HEADER ============================ */
 header {
     display: block;
-    
     text-transform: uppercase;
     font-family: 'Karla', sans-serif;
 }
@@ -58,9 +102,8 @@ header #header-navigation-mobile {
     overflow: hidden;
     display: none;
 
-
     width: 100%;
-    height: 100%;
+    height: calc(100vh - 5rem);
 
     padding-top: 2rem;
 
@@ -71,7 +114,6 @@ header #header-navigation-mobile {
     background-size: 100%;
     color: var(--very-light-gray);
     font-weight: bold;
-    text-align: center;
 }
 
 #header-navigation-mobile .navigation-links a {
@@ -86,7 +128,6 @@ border: 2px solid transparent;
     border: 2px solid var(--very-light-gray);
 }
 
-
 header #icon-hamburger {
     display: block;
 }
@@ -96,37 +137,117 @@ header #icon-hamburger {
 }
 
 /* ============================ HEADER ============================ */
+/*  */
 /* ============================ INTRO  ============================ */
-#intro {
+#intro .wrapper {
     background-color: var(--dark-violet);
     color: var(--very-light-gray);
 
+    background-image: url('../images/bg-pattern-intro-left-mobile.svg');
+    background-repeat: no-repeat;
+    background-position: top left;
     padding-bottom: 5rem;
-
-    text-align: center;
 }
 
 #intro img.picture {
     width: 100%;
 }
 
-#intro h1 {
-    font-family: 'DM Serif Display', serif;
-    font-weight: 400;
-    font-size: 2.5rem;
-    line-height: 2.5rem;
+#intro h2 {
+    padding-top: 6rem;
+    margin-bottom: 1rem;
+}
 
-    background: url('../images/bg-pattern-intro-left-mobile.svg') no-repeat;
-    background-position: top left;
+/* ============================ INTRO  ============================ */
+/*  */
+/* ====================== "We're different"  ====================== */
+#different h2,
+#different h3 {
+    color: var(--very-dark-violet);
+}
+
+#different h2 {
+    margin-bottom: 4rem;
+}
+
+#different .circled-icon {
+    margin: 0.5rem;
+}
+
+#different h3 {
+margin: 1rem 0;
+}
+
+#different p {
+    color: var(--grayish-blue);
+}
+
+#different .wrapper {
+    margin-bottom: 3rem;
+}
+
+/* ====================== "We're different"  ====================== */
+/*  */
+/* ======================== "How we work"  ======================= */
+
+#how-we-work {
+    background-color: var(--dark-violet);
+    background-image: url('../images/bg-pattern-how-we-work-mobile.svg');
+    background-repeat: no-repeat;
+    background-position: top right;
+    padding: 4rem 1.5rem;
+}
+
+#how-we-work h2 {
+    color: var(--very-light-gray);
+    margin-bottom: 2rem;
+}
+/* ======================== "How we work"  ======================= */
+/*  */
+/* ============================ FOOTER ============================ */
+
+footer {
+    background-color: var(--very-light-gray);
+    background-image: url('../images/bg-pattern-footer-mobile.svg');
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: 100%;
     padding-top: 6rem;
 }
 
-#intro p {
-    font-weight: 400;
-    font-family: 'Karla', sans-serif;
-    line-height: 1.6rem;
-
-    padding: 0.5rem 1.5rem;
-    margin-bottom: 1.5em;
+footer * {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 0.9rem;
 }
-/* ============================ INTRO  ============================ */
+
+.icon-wrapper {
+    margin: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--grayish-blue);
+}
+
+.fab {
+    color: var(--dark-grayish-violet);
+    font-size: 1.8rem;
+}
+
+.fab + .fab {
+    margin-left: 0.9rem;
+}
+
+footer h4 {
+    color: var(--dark-grayish-violet);
+    margin: 2rem;
+}
+
+footer a {
+    color: var(--dark-violet);
+    display: block;
+    margin-bottom: 0.9rem;
+}
+
+footer a:hover {
+    color: var(--grayish-blue);
+}
+/* ============================ FOOTER ============================ */
