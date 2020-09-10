@@ -78,8 +78,8 @@ p {
 }
 
 .btn-border:hover {
-    color: var(--dark-grayish-violet);
-    border-color: var(--dark-grayish-violet);
+    color: var(--very-dark-violet);
+    background-color: var(--very-light-gray);
 }
 
 .wrapper {
