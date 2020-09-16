@@ -6,14 +6,19 @@
     --dark-grayish-violet: hsl(273, 4%, 51%);
     --very-light-gray: hsl(0, 0%, 98%);
 }
-/* ============================ COLORS ============================ */
+/*  */
+/* ======================== BREAKPOINTS ========================= */
+    /* 
+    Small: 500px |  Medium: 600px  |  Large: 780px 
+    */
 /*  */
 /* ======================== LAYOUT BASICS ========================= */
 * {
     box-sizing: border-box;
+    border: none;
     margin: 0;
     padding: 0;
-    border: none;
+
     font-family: 'Karla', sans-serif;
     text-align: center;
 }
@@ -25,7 +30,7 @@ section {
 footer {
     padding-bottom: 8rem;
 }
-/* ======================== LAYOUT BASICS ========================= */
+/* ========================/ LAYOUT BASICS ========================= */
 /*  */
 /* ============================= TEXT ============================= */
 a {
@@ -55,7 +60,7 @@ p {
     font-weight: 400;
     margin-bottom: 1.5em;
 }
-/* ============================= TEXT ============================= */
+/* =============================/ TEXT ============================= */
 /*  */
 /* =========================== REUSABLE =========================== */
 .logo-wrapper {
@@ -82,23 +87,54 @@ p {
     background-color: var(--very-light-gray);
 }
 
-.wrapper {
+.wrapper,
+.mobile--lateral-padding {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
 }
 
+@media screen and (max-width: 780px) {
+    .desktop-only {
+        display: none;
+    }
+    .mobile--lateral-padding {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+@media screen and (min-width: 500px) {
+    .small-only {
+        display: none;
+    }
+    .wrapper {
+        padding-left: 10%;
+        padding-right: 10%; 
+    }
+} 
+
 @media screen and (min-width: 780px) {
+    .mobile-only {
+        display: none;
+    }
+    .desktop--lateral-padding {
+        padding-right: 10vw;
+        padding-left: 10vw;
+    }
+}
+
+@media screen and (min-width: 900px) {
     .desktop--flex {
         display: flex;
         align-items: center;
     }
-    .desktop--lateral-padding {
-        padding-right: 10%;
-        padding-left: 10%;
+    .wrapper {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
     }
 }
 
-/* =========================== REUSABLE =========================== */
+/* ===========================/ REUSABLE =========================== */
 /*  */
 /* ============================ HEADER ============================ */
 header {
@@ -191,21 +227,19 @@ header #icon-hamburger {
     }
 }
 
-/* ============================ HEADER ============================ */
+/* ============================/ HEADER ============================ */
 /*  */
 /* ============================ INTRO  ============================ */
-#intro .wrapper {
+#intro {
     background-color: var(--dark-violet);
     color: var(--very-light-gray);
+}
 
+#intro .wrapper {
     background-image: url('../images/bg-pattern-intro-left-mobile.svg');
     background-repeat: no-repeat;
     background-position: top left;
     padding-bottom: 5rem;
-}
-
-#intro img.picture {
-    width: 100%;
 }
 
 #intro h2 {
@@ -213,7 +247,91 @@ header #icon-hamburger {
     margin-bottom: 1rem;
 }
 
-/* ============================ INTRO  ============================ */
+#intro img.mobile--hero {
+    width: 100%;
+    max-width: max-content;
+}
+
+@media screen and (min-width: 500px) {
+    #intro {
+        margin-bottom: 15rem;
+        height: 38rem; 
+    }
+    #intro img.desktop--hero {
+        width: 20rem;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    #intro {
+        margin-bottom: 15rem;
+        height: 35rem;
+    }
+    #intro img.desktop--hero {
+        width: 20rem;
+    }
+}
+
+/* desktop */
+@media screen and (min-width: 780px) 
+and (max-width: 1000px) {
+    #intro .wrapper {
+        background-image: none;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    #intro {
+        display: flex;
+        height: auto;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    #intro {
+        margin-bottom: 15rem;
+        height: 37rem;
+    }
+    
+    #intro img.desktop--hero {
+        display: flex;
+        position: relative;
+        width: fit-content;
+        max-width: 45%;
+        left: 50%;
+        top: -30rem;
+        flex: 1;
+    }
+    #intro .wrapper {
+        width: 50%;
+        height: 100%;
+        padding: 0 2.5rem 0 0;
+        background-image: none;
+    }
+    #intro h2,
+    #intro p,
+    #intro .wrapper {
+        padding-left: 0;
+        text-align: left;
+        align-items: left;
+    }
+    
+    #intro h2 {
+        font-size: 4rem;
+        line-height: 3.8rem;
+        padding-top: 4rem;
+    }
+    #intro h2, p {
+        margin-bottom: 2rem;
+    }
+    #intro-line {
+        height: 15%;
+        width: 150px;
+        border-bottom: 1px solid var(--very-light-gray);
+    }
+    
+}
+
+/* ============================/ INTRO  ============================ */
 /*  */
 /* ====================== "We're different"  ====================== */
 #different h2,
@@ -247,7 +365,7 @@ margin: 1rem 0;
     }
 }
 
-/* ====================== "We're different"  ====================== */
+/* ======================/ "We're different"  ====================== */
 /*  */
 /* ======================== "How we work"  ======================= */
 
@@ -279,7 +397,7 @@ margin: 1rem 0;
         max-width: 27rem;
     }
 }
-/* ======================== "How we work"  ======================= */
+/* ========================/ "How we work"  ======================= */
 /*  */
 /* ============================ FOOTER ============================ */
 
@@ -352,4 +470,4 @@ footer a:hover {
         align-self: end;
     }
 }
-/* ============================ FOOTER ============================ */
+/* ============================/ FOOTER ============================ */
