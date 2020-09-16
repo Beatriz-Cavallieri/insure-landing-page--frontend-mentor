@@ -1,11 +1,11 @@
 # Desafio do Frontend Mentor - Landing page
 
-## Design proposto / Challenge design
-![Design preview for the Insure landing page coding challenge](./design/desktop-preview.jpg)
-
 ## Minha solução
 
 Em andamento
+
+## Design proposto / Challenge design
+![Design preview for the Insure landing page coding challenge](./design/desktop-preview.jpg)
 
 ## Tarefas
 
