@@ -10,7 +10,12 @@ Em andamento
 ## Tarefas
 
 (X) Criar o layout mobile
+
 (X) Criar o layout desktop
+
 ( ) Otimizar responsividade
+
 ( ) Otimizar acessibilidade
+
 ( ) Ajustar detalhes decorativos
+
