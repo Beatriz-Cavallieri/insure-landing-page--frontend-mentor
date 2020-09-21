@@ -1,4 +1,5 @@
 /* ============================ COLORS ============================ */
+
 :root {
     --dark-violet: hsl(256, 26%, 20%);
     --grayish-blue: hsl(216, 30%, 68%);
@@ -6,33 +7,43 @@
     --dark-grayish-violet: hsl(273, 4%, 51%);
     --very-light-gray: hsl(0, 0%, 98%);
 }
+
 /*  */
+
 /* ======================== BREAKPOINTS ========================= */
-    /* 
-    Small: 500px |  Medium: 600px  |  Large: 780px 
+
+/* 
+       500px |  600px  |  780px  | 1000px
     */
+
 /*  */
+
 /* ======================== LAYOUT BASICS ========================= */
+
 * {
     box-sizing: border-box;
     border: none;
     margin: 0;
     padding: 0;
-
     font-family: 'Karla', sans-serif;
     text-align: center;
 }
 
 section {
+    position: relative;
     margin-bottom: 8rem;
 }
 
 footer {
     padding-bottom: 8rem;
 }
+
 /* ========================/ LAYOUT BASICS ========================= */
+
 /*  */
+
 /* ============================= TEXT ============================= */
+
 a {
     text-decoration: none;
     color: inherit;
@@ -48,10 +59,18 @@ h2 {
     line-height: 2.5rem;
     padding-right: 1rem;
     padding-left: 1rem;
+    margin-bottom: 4rem;
 }
 
 h3 {
     font-size: 1.8rem;
+    margin: 1rem 0;
+}
+
+h4 {
+    color: var(--dark-grayish-violet);
+    margin: 2rem 0;
+    text-transform: uppercase;
 }
 
 p {
@@ -60,9 +79,29 @@ p {
     font-weight: 400;
     margin-bottom: 1.5em;
 }
+
+@media screen and (min-width: 780px) {
+    h2 {
+        font-size: 3rem;
+    }
+}
+
 /* =============================/ TEXT ============================= */
+
 /*  */
+
 /* =========================== REUSABLE =========================== */
+
+.dark-background {
+    background-color: var(--dark-violet);
+    color: var(--very-light-gray);
+}
+
+.anchor-text {
+    text-transform: uppercase;
+    font-family: 'Karla', sans-serif;
+}
+
 .logo-wrapper {
     align-items: center;
     justify-content: center;
@@ -73,12 +112,10 @@ p {
     border: 2px solid var(--very-light-gray);
     color: var(--very-light-gray);
     background-color: transparent;
-
     text-transform: uppercase;
     text-align: center;
     font-family: 'Karla', sans-serif;
     font-weight: bold;
-
     padding: 0.5rem 2rem;
 }
 
@@ -87,8 +124,7 @@ p {
     background-color: var(--very-light-gray);
 }
 
-.wrapper,
-.mobile--lateral-padding {
+.wrapper, .mobile--lateral-padding {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
 }
@@ -96,10 +132,6 @@ p {
 @media screen and (max-width: 780px) {
     .desktop-only {
         display: none;
-    }
-    .mobile--lateral-padding {
-        padding-left: 0;
-        padding-right: 0;
     }
 }
 
@@ -109,9 +141,9 @@ p {
     }
     .wrapper {
         padding-left: 10%;
-        padding-right: 10%; 
+        padding-right: 10%;
     }
-} 
+}
 
 @media screen and (min-width: 780px) {
     .mobile-only {
@@ -135,105 +167,80 @@ p {
 }
 
 /* ===========================/ REUSABLE =========================== */
+
 /*  */
+
 /* ============================ HEADER ============================ */
+
 header {
     display: block;
-    text-transform: uppercase;
-    font-family: 'Karla', sans-serif;
+    justify-content: space-between;
+    padding: 1.3rem;
 }
 
-header #header-images {
-    padding: 1.3rem;
+.header-images {
     display: flex;
     justify-content: space-between;
 }
 
-header #header-navigation {
+.navigation-links a {
     font-weight: bold;
-}
-
-@media (max-width: 780px) {
-    header #header-navigation {
-        color: var(--very-light-gray);
-        overflow: hidden;
-        display: none;
-
-        width: 100%;
-        height: calc(100vh - 5rem);
-        padding-top: 2rem;
-
-        background-color: var(--very-dark-violet);
-        background-image: url('../images/bg-pattern-mobile-nav.svg');
-        background-repeat: no-repeat;
-        background-position: bottom;
-        background-size: 100%;
-    }    
-}
-
-#header-navigation .navigation-links a {
     border: 3px solid transparent;
     display: block;
     padding: 1rem;
     margin: 0.5rem 1.5rem;
 }
 
-#header-navigation .navigation-links a:hover {
+.navigation-links a:hover {
     cursor: pointer;
     border: 3px solid var(--very-light-gray);
 }
 
-header #icon-hamburger {
-    display: block;
-}
-
-#nav-mobile-background {
-    width: 100%;
+@media (max-width: 780px) {
+    nav {
+        display: none;
+        background-color: var(--very-dark-violet);
+        color: var(--very-light-gray);
+        overflow: hidden;
+        width: 100%;
+        height: calc(100vh - 5rem);
+        padding-top: 2rem;
+        background-image: url('../images/bg-pattern-mobile-nav.svg');
+        background-repeat: no-repeat;
+        background-position: bottom;
+        background-size: 100%;
+    }
 }
 
 @media screen and (min-width: 780px) {
-    #header-menu-icon {
+    .menu-icon {
         display: none;
     }
-    header,
-    #header-navigation,
-    .navigation-links {
+    header, nav, .navigation-links {
         display: flex;
     }
-    header {
-        justify-content: space-between;
-        padding: 1.3rem;
-    }
-
-    header #header-images {
-        padding: 0;
-    }
-    #header-navigation .navigation-links a {
+    .navigation-links a {
         color: var(--dark-grayish-violet);
-        margin:0;
+        margin: 0;
         padding: 0.5rem 1.5rem;
     }
-    #header-navigation .navigation-links a:hover {
+    .navigation-links a:hover {
         color: var(--very-dark-violet);
         border-color: transparent;
     }
-    #header-navigation .navigation-links a#nav-link--view-plans {
+    a.nav-link--accentuate {
         color: var(--very-dark-violet);
         border-color: var(--very-dark-violet);
     }
-    #header-navigation .navigation-links a#nav-link--view-plans:hover {
+    a.nav-link--accentuate:hover {
         color: var(--very-light-gray);
         background-color: var(--very-dark-violet);
     }
 }
 
 /* ============================/ HEADER ============================ */
-/*  */
+
 /* ============================ INTRO  ============================ */
-#intro {
-    background-color: var(--dark-violet);
-    color: var(--very-light-gray);
-}
 
 #intro .wrapper {
     background-image: url('../images/bg-pattern-intro-left-mobile.svg');
@@ -242,12 +249,7 @@ header #icon-hamburger {
     padding-bottom: 5rem;
 }
 
-#intro h2 {
-    padding-top: 6rem;
-    margin-bottom: 1rem;
-}
-
-#intro img.mobile--hero {
+.mobile--hero {
     width: 100%;
     max-width: max-content;
 }
@@ -255,9 +257,9 @@ header #icon-hamburger {
 @media screen and (min-width: 500px) {
     #intro {
         margin-bottom: 15rem;
-        height: 38rem; 
+        height: 38rem;
     }
-    #intro img.desktop--hero {
+    .desktop--hero {
         width: 20rem;
     }
 }
@@ -267,22 +269,8 @@ header #icon-hamburger {
         margin-bottom: 15rem;
         height: 35rem;
     }
-    #intro img.desktop--hero {
+    .desktop--hero {
         width: 20rem;
-    }
-}
-
-/* desktop */
-@media screen and (min-width: 780px) 
-and (max-width: 1000px) {
-    #intro .wrapper {
-        background-image: none;
-        padding-left: 0;
-        padding-right: 0;
-    }
-    #intro {
-        display: flex;
-        height: auto;
     }
 }
 
@@ -291,64 +279,44 @@ and (max-width: 1000px) {
         margin-bottom: 15rem;
         height: 37rem;
     }
-    
-    #intro img.desktop--hero {
-        display: flex;
-        position: relative;
-        width: fit-content;
-        max-width: 45%;
-        left: 50%;
-        top: -30rem;
-        flex: 1;
-    }
     #intro .wrapper {
         width: 50%;
         height: 100%;
         padding: 0 2.5rem 0 0;
         background-image: none;
     }
-    #intro h2,
-    #intro p,
-    #intro .wrapper {
+    #intro h2, #intro p, #intro .wrapper {
         padding-left: 0;
         text-align: left;
         align-items: left;
     }
-    
     #intro h2 {
         font-size: 4rem;
         line-height: 3.8rem;
         padding-top: 4rem;
-    }
-    #intro h2, p {
-        margin-bottom: 2rem;
     }
     #intro-line {
         height: 15%;
         width: 150px;
         border-bottom: 1px solid var(--very-light-gray);
     }
-    
+    .desktop--hero {
+        position: absolute;
+        top: 8rem;
+        left: 50%;
+        width: auto;
+        max-width: 45%;
+    }
 }
 
 /* ============================/ INTRO  ============================ */
+
 /*  */
+
 /* ====================== "We're different"  ====================== */
-#different h2,
-#different h3 {
+
+#different {
     color: var(--very-dark-violet);
-}
-
-#different h2 {
-    margin-bottom: 4rem;
-}
-
-#different .circled-icon {
-    margin: 0.5rem 0;
-}
-
-#different h3 {
-margin: 1rem 0;
 }
 
 #different p {
@@ -360,17 +328,15 @@ margin: 1rem 0;
     #different * {
         text-align: left;
     }
-    #different h2 {
-        font-size: 3rem;
-    }
 }
 
 /* ======================/ "We're different"  ====================== */
+
 /*  */
+
 /* ======================== "How we work"  ======================= */
 
 #how-we-work {
-    background-color: var(--dark-violet);
     background-image: url('../images/bg-pattern-how-we-work-mobile.svg');
     background-repeat: no-repeat;
     background-position: top right;
@@ -378,7 +344,6 @@ margin: 1rem 0;
 }
 
 #how-we-work h2 {
-    color: var(--very-light-gray);
     margin-bottom: 2rem;
 }
 
@@ -386,7 +351,7 @@ margin: 1rem 0;
     #how-we-work {
         background-image: url('../images/bg-pattern-how-we-work-desktop.svg');
     }
-    #how-we-work .desktop--flex {
+    .hww-margin {
         justify-content: space-between;
         margin-right: 2rem;
         margin-left: 2rem;
@@ -397,8 +362,11 @@ margin: 1rem 0;
         max-width: 27rem;
     }
 }
+
 /* ========================/ "How we work"  ======================= */
+
 /*  */
+
 /* ============================ FOOTER ============================ */
 
 footer {
@@ -419,10 +387,9 @@ footer * {
 .icon-wrapper {
     margin: 2rem;
     padding-bottom: 2rem;
-
 }
 
-footer .underline {
+.underline {
     border-bottom: 1px solid var(--grayish-blue);
     padding-bottom: 2rem;
 }
@@ -432,22 +399,17 @@ footer .underline {
     font-size: 1.8rem;
 }
 
-.fab + .fab {
+.fab+.fab {
     margin-left: 0.9rem;
 }
 
-footer h4 {
-    color: var(--dark-grayish-violet);
-    margin: 2rem 0;
-}
-
-footer a {
+.footer--link {
     color: var(--dark-violet);
     display: block;
     margin-bottom: 0.9rem;
 }
 
-footer a:hover {
+.footer--link:hover {
     color: var(--grayish-blue);
 }
 
@@ -459,15 +421,16 @@ footer a:hover {
         justify-content: space-between;
         align-items: center;
     }
-    footer .wrapper {
+    .footer--list {
         padding: 0;
         width: 22%;
     }
-    footer .icon-wrapper {
+    .icon-wrapper {
         flex: 1;
         margin: 0;
         text-align: end;
         align-self: end;
     }
 }
+
 /* ============================/ FOOTER ============================ */
